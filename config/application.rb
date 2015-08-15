@@ -22,5 +22,13 @@ module Cwater
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Disable Asset Pipeline
+    config.assets.enabled = false
+
+    # Prevent rails generators from automatically generating coffeescript/scss files
+    config.generators do |g|
+      g.assets false
+    end
   end
 end

@@ -13,6 +13,19 @@ var autoprefixer = require('gulp-autoprefixer'),
 var cssPath = './app/assets/css',
     sassPath = './app/assets/sass/**/*.scss';
 
+gulp.task('js', function() {
+  var files = bowerFiles();
+
+  files.push('./js/**/*.js');
+
+  gulp.src(files)
+    .pipe(sourcemaps.init())
+    .pipe(concat('scripts.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./dist/'))
+    .pipe(browserSync.stream());
+});
+
 gulp.task('sass', function () {
   gulp.src(sassPath)
     .pipe(sourcemaps.init())
