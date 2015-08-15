@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Cwater</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>cwater</title>
+    <meta name="description" content="pure spring water infused with vitamin c">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<%= yield %>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-</body>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+    <body>
+      <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <%= yield %>
+
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </body>
 </html>
