@@ -2,6 +2,7 @@ var gulp = require('gulp');
 
 // gulp dependencies
 var autoprefixer = require('gulp-autoprefixer'),
+    bowerFiles = require('main-bower-files'),
     browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
@@ -14,15 +15,17 @@ var cssPath = './app/assets/css',
     sassPath = './app/assets/sass/**/*.scss';
 
 gulp.task('js', function() {
-  var files = bowerFiles();
+  var files = bowerFiles({
+    filter: ['**/**/*.js']
+  });
 
-  files.push('./js/**/*.js');
+  files.push('./app/assets/js/**/*.js');
 
   gulp.src(files)
     .pipe(sourcemaps.init())
-    .pipe(concat('scripts.js'))
+    .pipe(concat('application.js'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./app/assets/javascripts/'))
     .pipe(browserSync.stream());
 });
 

@@ -32,7 +32,9 @@ config/secrets.yml
 *.bowerrc
 bower.json
 
-node_modules
-
 # Ignore pow environment settings
 .powenv
+
+# dependency management
+node_modules
+bower_components
