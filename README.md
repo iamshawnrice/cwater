@@ -12,6 +12,7 @@ This little rails app is a mock-marketing/commerce site for a fictional beverage
 
 ## Notes
 I've disabled the rails asset pipeline and am managing the asset compilation/concatenation via gulp. This may seem counterintuitive, but I chose to do this for a few reasons:
+
 1. [Gulp (lib)](https://www.npmjs.com/package/gulp-sass) sass is a lot faster than the built-in rails sass compiler.
 2. [Browsersync](http://www.browsersync.io/) significantly speeds up debugging/troubleshooting and exposes a public IP for simultaneous on-device testing.
 3. Using gems to manage front-end dependencies (like bootstrap and jquery) always struck me as odd.
