@@ -1,8 +1,63 @@
-<%= render partial: "shared/nav" %>
-
 <section class="hero hero-home">
   <div class="hero-copy">
     <h1><strong>c</strong>water</h1>
     <p>pure spring water infused with Vitamin C</p>
-  </div>
-</section>
+    <%= link_to("Buy Now", buy_index_path, {:class => "cta"}) %>
+  </div><!-- .hero-copy -->
+</section><!-- .hero-home -->
+
+<section class="about">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <h2>A different kind of vitamin water</h2>
+        <p>We start with the purest water known to man: ice harvesed from passing comets. We then juice the freshest organic produce we can find. The juice goes through a 35-step distillation process until it has been reduced to .02% of its initial volume. The resulting solution is so concentrated that a single drop contains 1500mg of Vitamin C. How much is 1500mg? Quite a lot, actually.</p>
+      </div><!-- .col-xs-10 -->
+    </div><!-- .row -->
+
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <h3>Available in 3 delicious flavors:</h3>
+
+        <div class="row flavors">
+          <div class="flavor-orange col-xs-4">
+            <a href="#orange" data-toggle="tab" aria-controls="orange" role="tab">
+              <p>orange</p>
+            </a>
+          </div><!-- .orange -->
+
+          <div class="flavor-pineapple col-xs-4">
+            <a href="#pineapple" data-toggle="tab" aria-controls="pineapple" role="tab">
+              <p>pineapple</p>
+            </a>
+          </div><!-- .pineapple -->
+
+          <div class="flavor-kale col-xs-4">
+            <a href="#kale" data-toggle="tab" aria-controls="kale" role="tab">
+              <p>kale</p>
+            </a>
+          </div><!-- .kale -->
+        </div><!-- .flavors -->
+
+        <div class="row">
+          <div class="tab-content descriptions">
+            <div role="tabpanel" class="tab-pane fade in active" id="orange">
+              <p>Bursting with Florida sunshine, our inaugral flavor is the perfect balance of Vitamin C and water.</p>
+              <p><%= link_to('Buy Now', buy_index_path, {:class => "cta"}) %></p>
+            </div><!-- #orange -->
+
+            <div role="tabpanel" class="tab-pane fade" id="pineapple">
+              <p>All the sweetness of a Polynesian afternoon, without the expensive plane ticket. Or the sunburn.</p>
+              <p><%= link_to('Coming Soon', '#', {:class => "cta disabled"}) %></p>
+            </div><!-- #pineapple -->
+
+            <div role="tabpanel" class="tab-pane fade" id="kale">
+              <p>Packed with fiber, antioxidants, and potassium; it's like an all you can eat salad bar in a bottle.</p>
+              <p><%= link_to('Coming Soon', '#', {:class => "cta disabled"}) %></p>
+            </div><!-- #kale -->
+          </div><!-- .descriptions -->
+        </div><!-- .row -->
+      </div><!-- .col-xs-10 -->
+    </div><!-- .row -->
+  </div><!-- .container-fluid -->
+</section><!-- .about -->

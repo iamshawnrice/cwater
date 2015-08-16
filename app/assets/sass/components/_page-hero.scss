@@ -1,11 +1,11 @@
 .hero {
-  @include lato;
+  @include brand-font;
   background: url('hero-lg.jpg') no-repeat center;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   color: $white;
-  font-size: 5vw;
+  font-size: 48px;
 
   .hero-copy {
     transform: translateY(-50%);
@@ -20,6 +20,13 @@
 
     p {
       font-size: 1em;
+      margin-bottom: 1em;
+    }
+
+    .cta {
+      @include btn-hollow($white, $orange, 4px);
+      @include brand-font(700);
+      font-size: .75em;
     }
   }
 }
