@@ -6051,6 +6051,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
 
+.footer {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background: #333;
+  color: #fff;
+  padding: 1em 0; }
+  .footer p {
+    font-size: .75em;
+    margin-bottom: 0;
+    opacity: .5;
+    text-align: center; }
+
 .hero {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -6093,7 +6105,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .home .about {
   background: #050503;
-  color: #fff; }
+  color: #fff;
+  padding-bottom: 2em; }
 
 .home h2,
 .home h3 {

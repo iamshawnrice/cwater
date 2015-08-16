@@ -15,9 +15,10 @@
       <!--[if lt IE 8]>
           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-      <%= render partial: "shared/nav" %>
 
       <%= yield %>
+
+      <%= render partial: "shared/footer" %>
 
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
