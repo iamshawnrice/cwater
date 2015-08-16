@@ -46,6 +46,7 @@ gulp.task('serve', ['sass'], function() {
   });
 
   gulp.watch(sassPath, ['sass']);
+  gulp.watch('./app/assets/js/**/*.js', ['js']);
 });
 
 gulp.task('default', ['serve']);

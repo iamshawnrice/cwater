@@ -43,7 +43,7 @@
           <div class="tab-content descriptions">
             <div role="tabpanel" class="tab-pane fade in active" id="orange">
               <p>Bursting with Florida sunshine, our inaugral flavor is the perfect balance of Vitamin C and water.</p>
-              <p><%= link_to('Buy Now', buy_index_path, {:class => "cta"}) %></p>
+              <p><%= link_to('Buy Now', buy_index_path, {:class => "cta js-modal-link"}) %></p>
             </div><!-- #orange -->
 
             <div role="tabpanel" class="tab-pane fade" id="pineapple">
@@ -61,3 +61,5 @@
     </div><!-- .row -->
   </div><!-- .container-fluid -->
 </section><!-- .about -->
+
+<%= render partial: "shared/footer" %>
