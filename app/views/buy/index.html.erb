@@ -1,60 +1,74 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h2 class="modal-title" id="myModalLabel">So, you want some cwater?</h2>
+</div>
+
 <%= form_tag("#") do %>
-  <div class="form-group">
-    <%= label_tag "quantity", "How many do you want?" %>
-    <%= text_field_tag "quantity", nil, placeholder: "quantity", class: "form-control" %>
-  </div><!-- .form-group -->
+  <div class="modal-body">
+    <div class="form-group">
+      <%= label_tag "quantity", "How many do you want?" %>
+      <%= text_field_tag "quantity", nil, placeholder: "quantity", class: "form-control" %>
+    </div><!-- .form-group -->
 
-  <div class="form-group">
-    <%= label_tag "full_name", "What is your name?" %>
-    <%= text_field_tag "full_name", nil, placeholder: "Full Name", class: "form-control" %>
+    <div class="form-group">
+      <%= label_tag "full_name", "What is your name?" %>
+      <%= text_field_tag "full_name", nil, placeholder: "Full Name", class: "form-control" %>
 
-    <%= label_tag "payment", "How are you going to pay for them?" %>
-    <%= text_field_tag "payment", nil, placeholder: "XXXX-XXXX-XXXX-XXXX", class: "form-control" %>
+      <%= label_tag "payment", "How are you going to pay for them?" %>
+      <%= text_field_tag "payment", nil, placeholder: "XXXX-XXXX-XXXX-XXXX", class: "form-control" %>
 
-    <%= label_tag "expiration", "When does your card expire?" %>
-    <%= text_field_tag "expiration", nil, placeholder: "MM/YY", class: "form-control" %>
+      <%= label_tag "expiration", "When does your card expire?" %>
+      <%= text_field_tag "expiration", nil, placeholder: "MM/YY", class: "form-control" %>
 
-    <%= label_tag "cvc", "What is the little number on the back of the card?" %>
-    <%= text_field_tag "cvc", nil, placeholder: "CVC", class: "form-control" %>
+      <%= label_tag "cvc", "What is the little number on the back of the card?" %>
+      <%= text_field_tag "cvc", nil, placeholder: "CVC", class: "form-control" %>
 
-    <%= label_tag "billing-address-line1", "And what is your billing address?" %>
-    <%= text_field_tag "billing-address-line1", nil, placeholder: "456 Your Address Ave", class: "form-control" %>
+      <%= label_tag "billing-address-line1", "And what is your billing address?" %>
+      <%= text_field_tag "billing-address-line1", nil, placeholder: "456 Your Address Ave", class: "form-control" %>
 
-    <%= label_tag "billing-address-line2", "Apartment/Condo/Unit #?" %>
-    <%= text_field_tag "billing-address-line2", nil, placeholder: "#3A", class: "form-control" %>
+      <%= label_tag "billing-address-line2", "Apartment/Condo/Unit #?" %>
+      <%= text_field_tag "billing-address-line2", nil, placeholder: "#3A", class: "form-control" %>
 
-    <%= label_tag "billing-city", "What city do you live in?" %>
-    <%= text_field_tag "billing-city", nil, placeholder: "City", class: "form-control" %>
+      <%= label_tag "billing-city", "What city do you live in?" %>
+      <%= text_field_tag "billing-city", nil, placeholder: "City", class: "form-control" %>
 
-    <%= label_tag "billing-state", "What state do you live in?" %>
-    <%= text_field_tag "billing-state", nil, placeholder: "State", class: "form-control" %>
+      <%= label_tag "billing-state", "What state do you live in?" %>
+      <%= text_field_tag "billing-state", nil, placeholder: "State", class: "form-control" %>
 
-    <%= label_tag "billing-zip", "What is your zipcode?" %>
-    <%= text_field_tag "billing-zip", nil, placeholder: "00000", class: "form-control" %>
-  </div><!-- .form-group -->
+      <%= label_tag "billing-zip", "What is your zipcode?" %>
+      <%= text_field_tag "billing-zip", nil, placeholder: "00000", class: "form-control" %>
+    </div><!-- .form-group -->
 
-  <div class="form-group">
-    <label>Where would you like us to ship your cwater?</label>
-    <%= label_tag "use-billing", "Just send it to my billing address" %>
-    <%= radio_button_tag "shipping-preference", "billing_address", true %>
-    <%= label_tag "use-shipping", "Please send it to a different address" %>
-    <%= radio_button_tag "shipping-preference", "shipping_address" %>
+    <div class="form-group">
+      <label>Where would you like us to ship your cwater?</label>
+      <%= label_tag "use-billing", "Just send it to my billing address" %>
+      <%= radio_button_tag "shipping-preference", "billing_address", true %>
+      <%= label_tag "use-shipping", "Please send it to a different address" %>
+      <%= radio_button_tag "shipping-preference", "shipping_address" %>
 
-    <div class="shipping-address">
-      <%= label_tag "shipping-address-line1", "What is your shipping address?" %>
-      <%= text_field_tag "shipping-address-line1", nil, placeholder: "456 Your Address Ave", class: "form-control" %>
+      <div class="shipping-address">
+        <%= label_tag "shipping-address-line1", "What is your shipping address?" %>
+        <%= text_field_tag "shipping-address-line1", nil, placeholder: "456 Your Address Ave", class: "form-control" %>
 
-      <%= label_tag "shipping-address-line2", "Apartment/Condo/Unit #?" %>
-      <%= text_field_tag "shipping-address-line2", nil, placeholder: "#3A", class: "form-control" %>
+        <%= label_tag "shipping-address-line2", "Apartment/Condo/Unit #?" %>
+        <%= text_field_tag "shipping-address-line2", nil, placeholder: "#3A", class: "form-control" %>
 
-      <%= label_tag "city", "What city do you live in?" %>
-      <%= text_field_tag "city", nil, placeholder: "City", class: "form-control" %>
+        <%= label_tag "city", "What city do you live in?" %>
+        <%= text_field_tag "city", nil, placeholder: "City", class: "form-control" %>
 
-      <%= label_tag "state", "What state do you live in?" %>
-      <%= text_field_tag "state", nil, placeholder: "State", class: "form-control" %>
+        <%= label_tag "state", "What state do you live in?" %>
+        <%= text_field_tag "state", nil, placeholder: "State", class: "form-control" %>
 
-      <%= label_tag "zip", "What is your zipcode?" %>
-      <%= text_field_tag "zip", nil, placeholder: "00000", class: "form-control" %>
-    </div>
-  </div><!-- .form-group -->
+        <%= label_tag "zip", "What is your zipcode?" %>
+        <%= text_field_tag "zip", nil, placeholder: "00000", class: "form-control" %>
+      </div>
+    </div><!-- .form-group -->
+  </div><!-- .modal-body -->
+  <div class="modal-footer">
+    <%= button_tag "buy cwater", class: "btn btn-success" %>
+    <%= button_tag "cancel order", class: "btn btn-danger" %>
+  </div><!-- .modal-footer -->
+
 <% end %>
