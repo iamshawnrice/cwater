@@ -1,49 +1,36 @@
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass mixins.
-// -----------------------------------------------------------------------------
+// in an effort to decrease page weight $weight will need to be either 300 or 700
+@mixin brand-font($weight: 300) {
+  font-family: 'Lato', sans-serif;
+  font-weight: $weight;
+}
 
-/// Event wrapper
-/// @author Harry Roberts
-/// @param {Bool} $self [false] - Whether or not to include current selector
-/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
-@mixin on-event($self: false) {
-  @if $self {
-    &,
-    &:hover,
-    &:active,
-    &:focus {
-      @content;
-    }
-  } @else {
-    &:hover,
-    &:active,
-    &:focus {
-      @content;
-    }
+@mixin btn-hollow($initial: $white, $hover: darken($white, 20%), $borderWidth: 2px) {
+  @include transitioned;
+  border: $borderWidth solid $initial;
+  border-radius: 4px;
+  color: $initial;
+  padding: .2em .75em .3em;
+
+  &:hover {
+    background-color: $initial;
+    border-color: $hover;
+    color: $hover;
+    text-decoration: none;
   }
 }
 
-/// Make a context based selector a little more friendly
-/// @author Hugo Giraudel
-/// @param {String} $context
-@mixin when-inside($context) {
-  #{$context} & {
-    @content;
+@mixin link($initial, $hover: lighten($initial, 10%), $decoration: none) {
+  @include transition(color .25s);
+  color: $initial;
+  text-decoration: $decoration;
+
+  &:hover {
+    color: $hover;
+    text-decoration: $decoration;
   }
 }
 
-/// Responsive manager
-/// @param {String} $breakpoint - Breakpoint
-/// @requires $breakpoints
-/// @link http://sass-guidelin.es/#breakpoint-manager Sass Guidelines - Breakpoint Manager
-@mixin respond-to($breakpoint) {
-  $query: map-get($breakpoints, $breakpoint);
-  
-  @if not $query {
-    @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
-  }
-
-  @media #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
-    @content;
-  }
+@mixin transitioned($properties: all, $duration: .25s, $delay: 0s) {
+  transition: $properties $duration ease-in-out;
+  transition-delay: $delay;
 }

@@ -1,3 +1,6 @@
+.container-fluid {
+  max-width: 1440px; }
+
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -3801,7 +3804,7 @@ tbody.collapse.in {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   border: 1px solid transparent; }
   .navbar:before,
   .navbar:after {
@@ -6009,31 +6012,183 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-/**
- * Set up a decent box model on the root element
- */
-html {
-  box-sizing: border-box; }
+body {
+  font-size: 24px; }
 
-/**
- * Make all elements from the DOM inherit from the parent box-sizing
- * Since `*` has a specificity of 0, it does not override the `html` value
- * making all elements inheriting from the root box-sizing value
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
-*, *::before, *::after {
-  box-sizing: inherit; }
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Lato Light"), local("Lato-Light"), url(http://fonts.gstatic.com/s/lato/v11/IY9HZVvI1cMoAHxvl0w9LVKPGs1ZzpMvnHX-7fPOuAc.woff2) format("woff2");
+  unicode-range: U100-24F, U1E -1EFF, U20A -20AB, U20AD-20CF, U2C 58C 7F, UA720-A7FF; }
 
-/**
- * Basic styles for links
- */
-a {
-  color: #E50050;
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Lato Light"), local("Lato-Light"), url(http://fonts.gstatic.com/s/lato/v11/22JRxvfANxSmnAhzbFH8PgLUuEpTyoUstqEm5AMlJo4.woff2) format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Lato Bold"), local("Lato-Bold"), url(http://fonts.gstatic.com/s/lato/v11/rZPI2gHXi8zxUjnybc2ZQFKPGs1ZzpMvnHX-7fPOuAc.woff2) format("woff2");
+  unicode-range: U100-24F, U1E -1EFF, U20A -20AB, U20AD-20CF, U2C 58C 7F, UA720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Lato Bold"), local("Lato-Bold"), url(http://fonts.gstatic.com/s/lato/v11/MgNNr5y1C_tIEuLEmicLmwLUuEpTyoUstqEm5AMlJo4.woff2) format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; }
+
+.hero {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background: url("hero-lg.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  color: #fff;
+  font-size: 48px; }
+  .hero .hero-copy {
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%; }
+    .hero .hero-copy h1 {
+      font-size: 3em; }
+    .hero .hero-copy p {
+      font-size: 1em;
+      margin-bottom: 1em; }
+    .hero .hero-copy .cta {
+      -webkit-transition: all 0.25s ease-in-out;
+              transition: all 0.25s ease-in-out;
+      -webkit-transition-delay: 0s;
+              transition-delay: 0s;
+      border: 4px solid #fff;
+      border-radius: 4px;
+      color: #fff;
+      padding: 0.2em 0.75em 0.3em;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: .75em; }
+      .hero .hero-copy .cta:hover {
+        background-color: #fff;
+        border-color: #ffb220;
+        color: #ffb220;
+        text-decoration: none; }
+
+.home .about {
+  background: #050503;
+  color: #fff; }
+
+.home h2,
+.home h3 {
+  margin: 2em 0 1em;
+  text-align: center; }
+
+.home h2 {
+  font-size: 2em; }
+
+.home h3 {
+  font-size: 1.5em; }
+
+.home [class^="flavor-"] {
+  text-align: center; }
+  .home [class^="flavor-"] a {
+    display: block;
+    padding: 60px 0 15px;
+    position: relative; }
+    .home [class^="flavor-"] a:before {
+      background-image: url("flavor-sprites.png");
+      background-image: url("flavor-sprites.svg");
+      background-repeat: no-repeat;
+      background-size: 100px 360px;
+      content: "";
+      display: block;
+      left: 50%;
+      bottom: 60px;
+      position: absolute;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%); }
+
+.home .flavor-orange a {
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
+  color: #ffb220;
   text-decoration: none; }
-  a:hover,
-  a:active,
-  a:focus {
-    color: #333333;
-    text-decoration: underline; }
+  .home .flavor-orange a:hover {
+    color: #ffb220;
+    text-decoration: none; }
+  .home .flavor-orange a:before {
+    width: 32px;
+    height: 42px;
+    background-position: 0 0; }
+
+.home .flavor-pineapple a {
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
+  color: #fff891;
+  text-decoration: none; }
+  .home .flavor-pineapple a:hover {
+    color: #fff891;
+    text-decoration: none; }
+  .home .flavor-pineapple a:before {
+    width: 38px;
+    height: 38px;
+    background-position: 0 -161px; }
+
+.home .flavor-kale a {
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
+  color: #79a165;
+  text-decoration: none; }
+  .home .flavor-kale a:hover {
+    color: #79a165;
+    text-decoration: none; }
+  .home .flavor-kale a:before {
+    width: 53px;
+    height: 53px;
+    background-position: 0 bottom; }
+
+.home .descriptions {
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 1em 2em; }
+
+.home .cta {
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.2em 0.75em 0.3em;
+  display: inline-block;
+  margin-top: 1em; }
+  .home .cta:hover {
+    background-color: #fff;
+    border-color: #ffb220;
+    color: #ffb220;
+    text-decoration: none; }
+  .home .cta.disabled {
+    opacity: .5;
+    cursor: not-allowed; }
 
 /*# sourceMappingURL=application.css.map */
