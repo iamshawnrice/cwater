@@ -6063,6 +6063,16 @@ h1, h2, h3, h4, h5, h6 {
     opacity: .5;
     text-align: center; }
 
+.modal-dialog .form-group {
+  margin: 0 auto 40px;
+  max-width: 700px; }
+
+.modal-dialog .form-control {
+  margin-bottom: 20px; }
+
+.modal-dialog label {
+  font-size: .75em; }
+
 .hero {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -6103,29 +6113,29 @@ h1, h2, h3, h4, h5, h6 {
         color: #ffb220;
         text-decoration: none; }
 
-.home .about {
+.home .page-content .about {
   background: #050503;
   color: #fff;
   padding-bottom: 2em; }
 
-.home h2,
-.home h3 {
+.home .page-content h2,
+.home .page-content h3 {
   margin: 2em 0 1em;
   text-align: center; }
 
-.home h2 {
+.home .page-content h2 {
   font-size: 2em; }
 
-.home h3 {
+.home .page-content h3 {
   font-size: 1.5em; }
 
-.home [class^="flavor-"] {
+.home .page-content [class^="flavor-"] {
   text-align: center; }
-  .home [class^="flavor-"] a {
+  .home .page-content [class^="flavor-"] a {
     display: block;
     padding: 60px 0 15px;
     position: relative; }
-    .home [class^="flavor-"] a:before {
+    .home .page-content [class^="flavor-"] a:before {
       background-image: url("flavor-sprites.png");
       background-image: url("flavor-sprites.svg");
       background-repeat: no-repeat;
@@ -6139,52 +6149,52 @@ h1, h2, h3, h4, h5, h6 {
           -ms-transform: translateX(-50%);
               transform: translateX(-50%); }
 
-.home .flavor-orange a {
+.home .page-content .flavor-orange a {
   -webkit-transition: color 0.25s;
   transition: color 0.25s;
   color: #ffb220;
   text-decoration: none; }
-  .home .flavor-orange a:hover {
+  .home .page-content .flavor-orange a:hover {
     color: #ffb220;
     text-decoration: none; }
-  .home .flavor-orange a:before {
+  .home .page-content .flavor-orange a:before {
     width: 32px;
     height: 42px;
     background-position: 0 0; }
 
-.home .flavor-pineapple a {
+.home .page-content .flavor-pineapple a {
   -webkit-transition: color 0.25s;
   transition: color 0.25s;
   color: #fff891;
   text-decoration: none; }
-  .home .flavor-pineapple a:hover {
+  .home .page-content .flavor-pineapple a:hover {
     color: #fff891;
     text-decoration: none; }
-  .home .flavor-pineapple a:before {
+  .home .page-content .flavor-pineapple a:before {
     width: 38px;
     height: 38px;
     background-position: 0 -161px; }
 
-.home .flavor-kale a {
+.home .page-content .flavor-kale a {
   -webkit-transition: color 0.25s;
   transition: color 0.25s;
   color: #79a165;
   text-decoration: none; }
-  .home .flavor-kale a:hover {
+  .home .page-content .flavor-kale a:hover {
     color: #79a165;
     text-decoration: none; }
-  .home .flavor-kale a:before {
+  .home .page-content .flavor-kale a:before {
     width: 53px;
     height: 53px;
     background-position: 0 bottom; }
 
-.home .descriptions {
+.home .page-content .descriptions {
   text-align: center;
   border: 1px solid #fff;
   border-radius: 4px;
   padding: 1em 2em; }
 
-.home .cta {
+.home .page-content .cta {
   -webkit-transition: all 0.25s ease-in-out;
           transition: all 0.25s ease-in-out;
   -webkit-transition-delay: 0s;
@@ -6195,12 +6205,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.2em 0.75em 0.3em;
   display: inline-block;
   margin-top: 1em; }
-  .home .cta:hover {
+  .home .page-content .cta:hover {
     background-color: #fff;
     border-color: #ffb220;
     color: #ffb220;
     text-decoration: none; }
-  .home .cta.disabled {
+  .home .page-content .cta.disabled {
     opacity: .5;
     cursor: not-allowed; }
 
