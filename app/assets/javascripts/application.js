@@ -11596,7 +11596,6 @@ if (typeof jQuery === 'undefined') {
     $.ajax(path).done(function(response) {
       // on success, load the contents of the modal
       $modalContent.html(response);
-      processModalContent();
 
       // and show the modal
       $modal.modal({
@@ -11614,9 +11613,10 @@ if (typeof jQuery === 'undefined') {
     event.preventDefault();
   });
 
-  // Clear out modal body
+  // Clear out modal body when the modal is dismissedd
+  $modal.off();
   $modal.on('hidden.bs.modal', function() {
-
+    $modalContent.empty();
   });
 })();
 
