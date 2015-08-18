@@ -9,10 +9,11 @@
     <div class="form-group">
       <h3>How many bottles would you like?</h3>
       <div class="quantity-decoy">
-        <span class="glyphicon glyphicon-plus js-quantity-plus"></span>
+        <span class="quantity-adjust js-quantity-minus">-</span>
         <p class="quantity-count js-quantity-count">1</p>
-        <span class="glyphicon glyphicon-minus js-quantity-minus"></span>
+        <span class="quantity-adjust js-quantity-plus">+</span>
       </div><!-- .quantity-decoy -->
+      <p class="quantity-price js-quantity-price">$1.95</p><!-- .quantity-price -->
       <%= label_tag "quantity", "How many would you like?", class: "sr-only" %>
       <%= text_field_tag "quantity", 1, placeholder: "quantity", class: "form-control js-quantity-input hidden" %>
     </div><!-- .form-group -->

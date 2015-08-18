@@ -18,6 +18,7 @@ gulp.task('js', function() {
   var scripts = [
     './bower_components/jquery/dist/jquery.js',
     './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+    './bower_components/numeral/numeral.js',
     './bower_components/velocity/velocity.js',
     './app/assets/js/modals.js',
     './app/assets/js/order-form.js',

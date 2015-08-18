@@ -5,8 +5,10 @@ var cwater = (function(cwater) {
     var $input = $('.js-quantity-input'),
         $decoy = $('.js-quantity-count'),
         $plus = $('.js-quantity-plus'),
+        $price = $('.js-quantity-price'),
         $minus = $('.js-quantity-minus'),
-        quantity = 1;
+        quantity = 1,
+        price = 1.95;
 
     function init() {
       $minus.addClass('invisible');
@@ -63,6 +65,7 @@ var cwater = (function(cwater) {
       quantity--;
       $decoy.text(quantity);
       $input.val(quantity);
+      adjustPrice(quantity);
 
       if (quantity === 1) {
         $minus.addClass('invisible');
@@ -73,7 +76,14 @@ var cwater = (function(cwater) {
       quantity++;
       $decoy.text(quantity);
       $input.val(quantity);
+      adjustPrice(quantity);
       $minus.removeClass('invisible');
+    }
+
+    function adjustPrice(quantity) {
+      var adjustedPrice = numeral(quantity * price).format('0,0.00');
+
+      $price.text('$' + adjustedPrice);
     }
 
     return {
