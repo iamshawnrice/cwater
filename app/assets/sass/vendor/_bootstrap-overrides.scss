@@ -2,6 +2,8 @@
 
 $navbar-border-radius: 0;
 $navbar-margin-bottom: 0;
+$bootstrap-sass-asset-helper: true;
+$icon-font-path: './app/assets/fonts/bootstrap';
 
 .container-fluid {
   max-width: 1440px;

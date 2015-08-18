@@ -37,9 +37,17 @@ var cwater = (function(cwater) {
       });
 
       // Clear out modal body when the modal is dismissedd
-      $modal.off();
+      $modal.off('hidden.bs.modal');
       $modal.on('hidden.bs.modal', function() {
         $modalContent.empty();
+      });
+
+      $modal.off('show.bs.modal');
+      $modal.on('show.bs.modal', function() {
+        // initialize orderform js if it exists in the modal
+        if ($modalContent.find('.js-order-form')) {
+          cwater.orderForm().init();
+        }
       });
     };
 

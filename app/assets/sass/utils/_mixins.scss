@@ -19,6 +19,14 @@
   }
 }
 
+// When an item is set to be a click target, this will prevent the selection
+// background from becoming visually distracting
+@mixin clicky {
+  &::selection {
+    background: transparent;
+  }
+}
+
 @mixin link($initial, $hover: lighten($initial, 10%), $decoration: none) {
   @include transition(color .25s);
   color: $initial;

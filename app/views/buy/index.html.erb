@@ -4,12 +4,17 @@
   <h2 class="modal-title text-center" id="myModalLabel">So, you want some cwater?</h2>
 </div>
 
-<%= form_tag("#", class: "js-checkout-form") do %>
+<%= form_tag("#", class: "js-order-form") do %>
   <div class="modal-body container-fluid">
     <div class="form-group">
-      <h3>How many would you like?</h3>
+      <h3>How many bottles would you like?</h3>
+      <div class="quantity-decoy">
+        <span class="glyphicon glyphicon-plus js-quantity-plus"></span>
+        <p class="quantity-count js-quantity-count">1</p>
+        <span class="glyphicon glyphicon-minus js-quantity-minus"></span>
+      </div><!-- .quantity-decoy -->
       <%= label_tag "quantity", "How many would you like?", class: "sr-only" %>
-      <%= text_field_tag "quantity", nil, placeholder: "quantity", class: "form-control" %>
+      <%= text_field_tag "quantity", 1, placeholder: "quantity", class: "form-control js-quantity-input hidden" %>
     </div><!-- .form-group -->
 
     <div class="form-group">
@@ -66,11 +71,11 @@
     <div class="form-group">
       <h3>Where would you like us to ship your cwater?</h3>
       <%= label_tag "shipping_preference_billing_address", "Billing Address" %>
-      <%= radio_button_tag "shipping_preference", "billing_address", true %>
+      <%= radio_button_tag "shipping_preference", "billing_address", true, class: "js-shipping-select" %>
       <%= label_tag "shipping_preference_shipping_address", "Different Address" %>
-      <%= radio_button_tag "shipping_preference", "shipping_address" %>
+      <%= radio_button_tag "shipping_preference", "shipping_address", false, class: "js-shipping-select" %>
 
-      <div class="shipping-address">
+      <div class="shipping-address js-shipping-address">
         <%= label_tag "full_name", "What is your name?", class: "sr-only" %>
         <%= text_field_tag "full_name", nil, placeholder: "Full Name", class: "form-control" %>
 

@@ -4,7 +4,6 @@ var cwater = (function(cwater) {
   // Initialize all modules here
   $(document).ready(function() {
     cwater.modalsInit().init();
-    cwater.orderForm().init();
   });
 
   return cwater;

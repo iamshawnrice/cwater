@@ -239,8 +239,8 @@ th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url(twbs-font-path("./app/assets/fonts/bootstrapglyphicons-halflings-regular.eot"));
+  src: url(twbs-font-path("./app/assets/fonts/bootstrapglyphicons-halflings-regular.eot?#iefix")) format("embedded-opentype"), url(twbs-font-path("./app/assets/fonts/bootstrapglyphicons-halflings-regular.woff2")) format("woff2"), url(twbs-font-path("./app/assets/fonts/bootstrapglyphicons-halflings-regular.woff")) format("woff"), url(twbs-font-path("./app/assets/fonts/bootstrapglyphicons-halflings-regular.ttf")) format("truetype"), url(twbs-font-path("./app/assets/fonts/bootstrapglyphicons-halflings-regular.svg#glyphicons_halflingsregular")) format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -6072,6 +6072,38 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-dialog label {
   font-size: .75em; }
+
+.quantity-decoy {
+  font-weight: bold;
+  text-align: center; }
+  .quantity-decoy::-moz-selection {
+    background: transparent; }
+  .quantity-decoy::selection {
+    background: transparent; }
+  .quantity-decoy .quantity-count {
+    display: inline-block;
+    font-size: 2em;
+    max-width: 80%;
+    padding: 10px;
+    text-align: center; }
+    .quantity-decoy .quantity-count::-moz-selection {
+      background: transparent; }
+    .quantity-decoy .quantity-count::selection {
+      background: transparent; }
+    .quantity-decoy .quantity-count:focus {
+      background: #eee;
+      outline: none; }
+  .quantity-decoy .glyphicon {
+    cursor: pointer;
+    font-size: 1.5em;
+    opacity: .5;
+    padding: 0 10px;
+    position: relative;
+    -webkit-transform: translateY(-25%);
+        -ms-transform: translateY(-25%);
+            transform: translateY(-25%); }
+    .quantity-decoy .glyphicon:active {
+      opacity: 1; }
 
 .hero {
   font-family: 'Lato', sans-serif;

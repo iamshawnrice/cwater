@@ -14,10 +14,11 @@ var cssPath = './app/assets/css',
     sassPath = './app/assets/sass/**/*.scss';
 
 gulp.task('js', function() {
-  // control order of js files here
+  // dictate order of js files here
   var scripts = [
     './bower_components/jquery/dist/jquery.js',
     './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+    './bower_components/velocity/velocity.js',
     './app/assets/js/modals.js',
     './app/assets/js/order-form.js',
     './app/assets/js/init.js'
