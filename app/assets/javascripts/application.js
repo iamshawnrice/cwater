@@ -16172,7 +16172,20 @@ var cwater = (function(cwater) {
           cwater.orderForm().init();
         }
       });
+
+      $modal.off('modal-loaded');
+      $modal.on('modal-loaded', function() {
+        dismissModal();
+      });
     };
+
+    // If the contents of a modal are replaced by a second AJAX call, add listeners to the new dismiss button
+    function dismissModal() {
+      $('.js-modal-dismiss').off();
+      $('.js-modal-dismiss').on('click', function() {
+        $modal.modal('hide');
+      });
+    }
 
     return {
       init: init
@@ -16196,8 +16209,34 @@ var cwater = (function(cwater) {
 
     function init() {
       $minus.addClass('invisible');
+      ajaxSubmit();
       initializeQuantityButtons();
       initializeShippingSelect();
+    }
+
+    function ajaxSubmit() {
+      $('.js-ajax-submit').click(function(event) {
+        var $trigger = $(this),
+            $form = $('.js-order-form'),
+            path = $form.data('path');
+
+        // disable the trigger button to prevent spamming the server
+        $trigger.prop('disabled', true);
+
+        // hit the server for the contents of the modal
+        $.ajax(path).done(function(response) {
+          // on success, load the contents of the modal
+          $('.js-modal-content').html(response);
+          // Trigger a 'content loaded event'
+          $('.js-modal-container').trigger('modal-loaded');
+        }).fail(function(response) {
+          // on failure, notify the user
+          $modalContent.html('<p>There seems to have been an error.</p>');
+        }).always(function() {
+          //reenable the trigger
+          $trigger.prop('disabled', false);
+        });
+      });
     }
 
     function initializeShippingSelect() {

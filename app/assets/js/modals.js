@@ -49,7 +49,20 @@ var cwater = (function(cwater) {
           cwater.orderForm().init();
         }
       });
+
+      $modal.off('modal-loaded');
+      $modal.on('modal-loaded', function() {
+        dismissModal();
+      });
     };
+
+    // If the contents of a modal are replaced by a second AJAX call, add listeners to the new dismiss button
+    function dismissModal() {
+      $('.js-modal-dismiss').off();
+      $('.js-modal-dismiss').on('click', function() {
+        $modal.modal('hide');
+      });
+    }
 
     return {
       init: init

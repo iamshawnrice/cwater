@@ -4,7 +4,7 @@
   <h2 class="modal-title text-center" id="myModalLabel">So, you want some cwater?</h2>
 </div>
 
-<%= form_tag("#", class: "js-order-form") do %>
+<%= form_tag("#", class: "js-order-form", data: {:path => buy_confirm_path}) do %>
   <div class="modal-body container-fluid">
     <div class="form-group">
       <h3>How many bottles would you like?</h3>
@@ -110,8 +110,8 @@
     </div><!-- .form-group -->
   </div><!-- .modal-body -->
   <div class="modal-footer">
-    <%= button_tag "buy cwater", class: "btn btn-lg btn-success" %>
     <%= button_tag "cancel order", class: "btn btn-lg btn-danger", data: {:dismiss => "modal"} %>
+    <%= button_tag "buy cwater", class: "btn btn-lg btn-success js-ajax-submit" %>
   </div><!-- .modal-footer -->
 
 <% end %>
