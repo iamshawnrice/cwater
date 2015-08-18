@@ -2,7 +2,6 @@ var gulp = require('gulp');
 
 // gulp dependencies
 var autoprefixer = require('gulp-autoprefixer'),
-    bowerFiles = require('main-bower-files'),
     browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
@@ -15,13 +14,16 @@ var cssPath = './app/assets/css',
     sassPath = './app/assets/sass/**/*.scss';
 
 gulp.task('js', function() {
-  var files = bowerFiles({
-    filter: ['**/**/*.js']
-  });
+  // control order of js files here
+  var scripts = [
+    './bower_components/jquery/dist/jquery.js',
+    './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+    './app/assets/js/modals.js',
+    './app/assets/js/order-form.js',
+    './app/assets/js/init.js'
+  ];
 
-  files.push('./app/assets/js/**/*.js');
-
-  gulp.src(files)
+  gulp.src(scripts)
     .pipe(sourcemaps.init())
     .pipe(concat('application.js'))
     .pipe(sourcemaps.write('.'))
