@@ -33362,6 +33362,8 @@ var cwater = (function(cwater) {
       $modal.off('hidden.bs.modal');
       $modal.on('hidden.bs.modal', function() {
         $modalContent.empty();
+
+        debugger;
       });
 
       $modal.off('show.bs.modal');
