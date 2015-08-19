@@ -33526,17 +33526,16 @@ var cwater = (function(cwater) {
   'use strict';
 
   cwater.salesFeed = function() {
-    var salesData;
 
     function init() {
       getSalesData();
     }
 
     function getSalesData() {
-      var url = 'http://beta.json-generator.com/api/json/get/EkDfzR3o'
+      var url = 'http://beta.json-generator.com/api/json/get/EkDfzR3o';
 
       $.ajax(url).done(function(response) {
-        salesData = {
+        var salesData = {
           items: response
         };
 
