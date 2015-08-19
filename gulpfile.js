@@ -23,6 +23,7 @@ gulp.task('js', function() {
     './bower_components/validetta/dist/validetta.js',
     './app/assets/js/modals.js',
     './app/assets/js/order-form.js',
+    './app/assets/js/sales-feed.js',
     './app/assets/js/init.js'
   ];
 
