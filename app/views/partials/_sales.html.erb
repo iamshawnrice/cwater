@@ -5,18 +5,16 @@
   </header>
 
   <div class="feed js-feed">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p class="pull-left">Shawn from Orlando, US</p>
-        <p class="pull-right">Quantity: 100</p>
-      </div><!-- .panel-body -->
-    </div><!-- .panel-default -->
-
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p class="pull-left">Shawn from Orlando, US</p>
-        <p class="pull-right">Quantity: 100</p>
-      </div><!-- .panel-body -->
-    </div><!-- .panel-default -->
   </div><!-- .feed -->
+
+  <script id="js-template" type="text/ractive">
+    {{#items:i}}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p class="pull-left">{{ first }} from {{ address }}</p>
+          <p class="pull-right">Quantity: {{ quantity }}</p>
+        </div>
+      </div>
+    {{/items}}
+  </script>
 </section><!-- .sales-feed -->

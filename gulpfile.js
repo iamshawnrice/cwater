@@ -19,6 +19,7 @@ gulp.task('js', function() {
     './bower_components/jquery/dist/jquery.js',
     './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
     './bower_components/numeral/numeral.js',
+    './bower_components/ractive/ractive.js',
     './bower_components/velocity/velocity.js',
     './bower_components/validetta/dist/validetta.js',
     './app/assets/js/modals.js',

@@ -6,6 +6,11 @@
   padding: 2em 2%;
   position: relative;
 
+  .feed {
+    max-height: 80vh;
+    overflow: auto;
+  }
+
   header {
     @include brand-font;
     text-align: center;
