@@ -1,0 +1,23 @@
+<section class="sales-feed">
+  <header>
+    <h1>These people all love <strong>c</strong>water</h1>
+    <p>And soon you will too</p>
+  </header>
+
+  <div class="feed">
+    <div class="panel panel-default">
+      <ul class="list-group js-feed">
+
+      </ul><!-- .list-group -->
+    </div><!-- .panel-default -->
+  </div><!-- .feed -->
+
+  <script id="js-template" type="text/ractive">
+    {{#items:i}}
+      <li class="list-group-item clearfix">
+        <p class="pull-left">{{ first }} from {{ address }}</p>
+        <p class="pull-right">Quantity: {{ quantity }}</p>
+      </li>
+    {{/items}}
+  </script>
+</section><!-- .sales-feed -->

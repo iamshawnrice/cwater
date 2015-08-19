@@ -6013,6 +6013,9 @@ button.close {
     display: none !important; } }
 
 body {
+  background: url("hero-lg.jpg") no-repeat center;
+  background-attachment: fixed;
+  background-size: cover;
   font-size: 24px; }
 
 /* latin-ext */
@@ -6124,20 +6127,18 @@ h1, h2, h3, h4, h5, h6 {
 .hero {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  background: url("hero-lg.jpg") no-repeat center;
-  background-size: cover;
-  min-height: 100vh;
-  position: relative;
   color: #fff;
-  font-size: 48px; }
+  font-size: 48px;
+  min-height: 100vh;
+  position: relative; }
   .hero .hero-copy {
+    position: absolute;
+    text-align: center;
+    top: 50%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    top: 50%; }
+    width: 100%; }
     .hero .hero-copy h1 {
       font-size: 3em; }
     .hero .hero-copy p {
@@ -6160,6 +6161,29 @@ h1, h2, h3, h4, h5, h6 {
         border-color: #ffb220;
         color: #ffb220;
         text-decoration: none; }
+
+.sales-feed {
+  background-attachment: fixed;
+  background-size: cover;
+  background: url("hero-lg-blurred.jpg") no-repeat center;
+  min-height: 60vh;
+  padding: 2em 2%;
+  position: relative; }
+  .sales-feed .feed {
+    max-height: 300px;
+    overflow: auto;
+    font-size: .75em; }
+  .sales-feed header {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2em; }
+  .sales-feed .panel p {
+    margin-bottom: 0; }
+    .sales-feed .panel p.panel-title {
+      font-size: 1.5em;
+      margin-bottom: .5em; }
 
 .home .page-content .about {
   background: #050503;

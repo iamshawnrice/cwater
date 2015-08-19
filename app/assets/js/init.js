@@ -4,6 +4,7 @@ var cwater = (function(cwater) {
   // Initialize all modules here
   $(document).ready(function() {
     cwater.modalsInit().init();
+    cwater.salesFeed().init();
   });
 
   return cwater;
