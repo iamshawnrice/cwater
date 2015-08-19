@@ -1,4 +1,4 @@
-var cwater = (function(cwater) {
+  var cwater = (function(cwater) {
   'use strict';
 
   cwater.modalsInit = function() {
@@ -45,8 +45,13 @@ var cwater = (function(cwater) {
       $modal.off('show.bs.modal');
       $modal.on('show.bs.modal', function() {
         // initialize orderform js if it exists in the modal
-        if ($modalContent.find('.js-order-form')) {
+        if ($modalContent.find('.js-order-form').length) {
           cwater.orderForm().init();
+        }
+
+        // initialize sales stats if it exists in the modal
+        if ($modalContent.find('.js-stats').length) {
+          cwater.salesStats().getSalesStats();
         }
       });
 
