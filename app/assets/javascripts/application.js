@@ -16807,14 +16807,10 @@ var cwater = (function(cwater) {
     }
 
     function ajaxSubmit(event) {
-      var $trigger = $(this),
-          $form = $('.js-order-form'),
+      var $form = $('.js-order-form'),
           path = $form.data('path');
 
       event.preventDefault();
-
-      // disable the trigger button to prevent spamming the server
-      $trigger.prop('disabled', true);
 
       // hit the server for the contents of the modal
       $.ajax(path).done(function(response) {
@@ -16825,9 +16821,6 @@ var cwater = (function(cwater) {
       }).fail(function(response) {
         // on failure, notify the user
         $modalContent.html('<p>There seems to have been an error.</p>');
-      }).always(function() {
-        //reenable the trigger
-        $trigger.prop('disabled', false);
       });
     }
 
