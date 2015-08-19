@@ -6170,8 +6170,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2em 2%;
   position: relative; }
   .sales-feed .feed {
-    max-height: 80vh;
-    overflow: auto; }
+    max-height: 300px;
+    overflow: auto;
+    font-size: .75em; }
   .sales-feed header {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
@@ -6180,6 +6181,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2em; }
   .sales-feed .panel p {
     margin-bottom: 0; }
+    .sales-feed .panel p.panel-title {
+      font-size: 1.5em;
+      margin-bottom: .5em; }
 
 .home .page-content .about {
   background: #050503;

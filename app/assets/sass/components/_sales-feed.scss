@@ -7,8 +7,9 @@
   position: relative;
 
   .feed {
-    max-height: 80vh;
+    max-height: 300px;
     overflow: auto;
+    font-size: .75em;
   }
 
   header {
@@ -20,5 +21,10 @@
 
   .panel p {
     margin-bottom: 0;
+
+    &.panel-title {
+      font-size: 1.5em;
+      margin-bottom: .5em;
+    }
   }
 }
