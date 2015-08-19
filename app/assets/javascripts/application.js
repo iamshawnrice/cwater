@@ -33370,6 +33370,11 @@ var cwater = (function(cwater) {
         if ($modalContent.find('.js-order-form')) {
           cwater.orderForm().init();
         }
+
+        // initialize sales stats if it exists in the modal
+        if ($modalContent.find('.js-stats')) {
+          cwater.salesStats().init();
+        }
       });
 
       $modal.off('modal-loaded');
@@ -33543,6 +33548,43 @@ var cwater = (function(cwater) {
           el: '.js-feed',
           template: '#js-template',
           data: salesData
+        })
+
+      }).fail(function(response) {
+        console.error('there seems to be an issue with the mock data. Please check ' + url + 'for more info');
+      });
+    }
+
+    return {
+      init: init
+    }
+  }
+
+  return cwater;
+}(cwater || {}, jQuery));
+
+var cwater = (function(cwater) {
+  'use strict';
+
+  // Initialize all modules here
+  cwater.salesStats = function() {
+
+    function init() {
+      getSalesStats();
+    }
+
+    function getSalesStats() {
+      var url = 'http://beta.json-generator.com/api/json/get/N1DNHlao';
+
+      $.ajax(url).done(function(response) {
+        var salesStats = {
+          items: response
+        };
+
+        var ractive = new Ractive({
+          el: '.js-stats',
+          template: '#js-stats-template',
+          data: salesStats
         })
 
       }).fail(function(response) {

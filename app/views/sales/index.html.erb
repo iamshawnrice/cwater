@@ -1,3 +1,23 @@
-<%= render partial: "shared/nav" %>
+<div class="modal-header">
+  <h2 class="modal-title text-center" id="myModalLabel">Sales Statistics</h2>
+</div><!-- .modal-header -->
 
-<h1>Sales</h1>
+<div class="modal-body">
+  <table class="table table-striped">
+    <thead>
+      <td># of units shipped</td>
+      <td># of units sold</td>
+    </thead>
+    <tbody class="js-stats">
+    </tbody>
+  </table>
+
+  <script id="js-stats-template" type="text/ractive">
+    {{#items:i}}
+      <tr>
+        <td>{{ shipped }}</td>
+        <td>{{ sold }}<td>
+      </tr>
+    {{/items}}
+  </script>
+</div><!-- .modal-body -->

@@ -4,13 +4,17 @@
     <p>And soon you will too</p>
   </header>
 
-  <div class="feed">
+  <div class="feed container-fluid">
     <div class="panel panel-default">
       <ul class="list-group js-feed">
 
       </ul><!-- .list-group -->
     </div><!-- .panel-default -->
   </div><!-- .feed -->
+
+  <div class="text-center">
+    <%= link_to("View Sales Stats", sales_path, {:class => "btn btn-default btn-lg js-modal-link"}) %>
+  </div>
 
   <script id="js-template" type="text/ractive">
     {{#items:i}}
