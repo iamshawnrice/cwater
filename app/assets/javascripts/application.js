@@ -33373,7 +33373,7 @@ will produce an inaccurate conversion value. The same issue exists with the cx/c
 
         // initialize sales stats if it exists in the modal
         if ($modalContent.find('.js-stats').length) {
-          cwater.salesStats().init();
+          cwater.salesStats().getSalesStats();
         }
       });
 
@@ -33569,10 +33569,6 @@ var cwater = (function(cwater) {
   // Initialize all modules here
   cwater.salesStats = function() {
 
-    function init() {
-      getSalesStats();
-    }
-
     function getSalesStats() {
       var url = 'http://beta.json-generator.com/api/json/get/N1DNHlao';
 
@@ -33593,7 +33589,7 @@ var cwater = (function(cwater) {
     }
 
     return {
-      init: init
+      getSalesStats: getSalesStats
     }
   }
 

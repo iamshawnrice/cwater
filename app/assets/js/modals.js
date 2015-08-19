@@ -51,7 +51,7 @@
 
         // initialize sales stats if it exists in the modal
         if ($modalContent.find('.js-stats').length) {
-          cwater.salesStats().init();
+          cwater.salesStats().getSalesStats();
         }
       });
 

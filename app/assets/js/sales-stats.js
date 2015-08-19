@@ -4,10 +4,6 @@ var cwater = (function(cwater) {
   // Initialize all modules here
   cwater.salesStats = function() {
 
-    function init() {
-      getSalesStats();
-    }
-
     function getSalesStats() {
       var url = 'http://beta.json-generator.com/api/json/get/N1DNHlao';
 
@@ -28,7 +24,7 @@ var cwater = (function(cwater) {
     }
 
     return {
-      init: init
+      getSalesStats: getSalesStats
     }
   }
 
