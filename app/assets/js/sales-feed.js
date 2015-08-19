@@ -1,6 +1,9 @@
 var cwater = (function(cwater) {
   'use strict';
 
+  // disables debug mode when code is minified
+  Ractive.DEBUG = /unminified/.test(function(){/*unminified*/});
+
   cwater.salesFeed = function() {
 
     function init() {

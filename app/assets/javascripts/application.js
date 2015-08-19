@@ -33530,6 +33530,9 @@ var cwater = (function(cwater) {
 var cwater = (function(cwater) {
   'use strict';
 
+  // disables debug mode when code is minified
+  Ractive.DEBUG = /unminified/.test(function(){/*unminified*/});
+
   cwater.salesFeed = function() {
 
     function init() {
@@ -33565,6 +33568,9 @@ var cwater = (function(cwater) {
 
 var cwater = (function(cwater) {
   'use strict';
+
+  // disables debug mode when code is minified
+  Ractive.DEBUG = /unminified/.test(function(){/*unminified*/});
 
   // Initialize all modules here
   cwater.salesStats = function() {
