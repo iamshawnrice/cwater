@@ -1,0 +1,47 @@
+.quantity-decoy {
+  @include clicky;
+  font-weight: bold;
+  text-align: center;
+
+  .quantity-count {
+    @include clicky;
+    display: inline-block;
+    font-size: 2em;
+    max-width: 80%;
+    text-align: center;
+    margin-bottom: 0;
+
+    &:focus {
+      background: $grey-e;
+      outline: none;
+    }
+  }
+}
+
+.quantity-adjust {
+  @include brand-font(700);
+  @include clicky;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2em;
+  opacity: .5;
+  min-width: 30px;
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+.quantity-price {
+  font-size: .75em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.validetta-bubble {
+  float: right;
+  font-size: .75em;
+  color: $brand-danger;
+  position: relative;
+  top: -1em;
+}

@@ -1,7 +1,10 @@
-(function() {
-  'use-strict';
+var cwater = (function(cwater) {
+  'use strict';
 
+  // Initialize all modules here
   $(document).ready(function() {
-    console.log('ready');
+    cwater.modalsInit().init();
   });
-})();
+
+  return cwater;
+}(cwater || {}, jQuery));
