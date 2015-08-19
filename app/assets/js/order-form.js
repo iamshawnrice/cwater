@@ -11,34 +11,47 @@ var cwater = (function(cwater) {
         price = 1.95;
 
     function init() {
+      // initialize client-side validations
+
+      $('.js-order-form').validetta({
+        display: 'inline',
+        onValid: function(event) {
+          ajaxSubmit(event);
+        }
+      },
+      {
+        required: '* required'
+      });
+      // hide the quantity '-' button
       $minus.addClass('invisible');
-      ajaxSubmit();
+
+      // initialize orderform functions
       initializeQuantityButtons();
       initializeShippingSelect();
     }
 
-    function ajaxSubmit() {
-      $('.js-ajax-submit').click(function(event) {
-        var $trigger = $(this),
-            $form = $('.js-order-form'),
-            path = $form.data('path');
+    function ajaxSubmit(event) {
+      var $trigger = $(this),
+          $form = $('.js-order-form'),
+          path = $form.data('path');
 
-        // disable the trigger button to prevent spamming the server
-        $trigger.prop('disabled', true);
+      event.preventDefault();
 
-        // hit the server for the contents of the modal
-        $.ajax(path).done(function(response) {
-          // on success, load the contents of the modal
-          $('.js-modal-content').html(response);
-          // Trigger a 'content loaded event'
-          $('.js-modal-container').trigger('modal-loaded');
-        }).fail(function(response) {
-          // on failure, notify the user
-          $modalContent.html('<p>There seems to have been an error.</p>');
-        }).always(function() {
-          //reenable the trigger
-          $trigger.prop('disabled', false);
-        });
+      // disable the trigger button to prevent spamming the server
+      $trigger.prop('disabled', true);
+
+      // hit the server for the contents of the modal
+      $.ajax(path).done(function(response) {
+        // on success, load the contents of the modal
+        $('.js-modal-content').html(response);
+        // Trigger a 'content loaded event'
+        $('.js-modal-container').trigger('modal-loaded');
+      }).fail(function(response) {
+        // on failure, notify the user
+        $modalContent.html('<p>There seems to have been an error.</p>');
+      }).always(function() {
+        //reenable the trigger
+        $trigger.prop('disabled', false);
       });
     }
 

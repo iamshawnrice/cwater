@@ -37,3 +37,11 @@
   font-weight: bold;
   text-align: center;
 }
+
+.validetta-bubble {
+  float: right;
+  font-size: .75em;
+  color: $brand-danger;
+  position: relative;
+  top: -1em;
+}

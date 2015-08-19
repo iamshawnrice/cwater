@@ -6114,6 +6114,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   text-align: center; }
 
+.validetta-bubble {
+  float: right;
+  font-size: .75em;
+  color: #d9534f;
+  position: relative;
+  top: -1em; }
+
 .hero {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
