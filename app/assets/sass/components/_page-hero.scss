@@ -1,0 +1,30 @@
+.hero {
+  @include brand-font;
+  color: $white;
+  font-size: 48px;
+  min-height: 100vh;
+  position: relative;
+
+  .hero-copy {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+
+    h1 {
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
+
+    .cta {
+      @include btn-hollow($white, $orange, 4px);
+      @include brand-font(700);
+      font-size: .75em;
+    }
+  }
+}

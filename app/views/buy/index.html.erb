@@ -1,0 +1,149 @@
+<div class="col-xs-6"></div><!-- .col-xs-6 -->
+
+<div class="modal-header">
+  <h2 class="modal-title text-center" id="myModalLabel">So, you want some cwater?</h2>
+</div>
+
+<%= form_tag("#", class: "js-order-form", data: {:path => buy_confirm_path}) do %>
+  <div class="modal-body container-fluid">
+    <div class="form-group">
+      <h3 class="text-center">How many bottles would you like?</h3>
+      <div class="quantity-decoy">
+        <span class="quantity-adjust js-quantity-minus">-</span>
+        <p class="quantity-count js-quantity-count">1</p>
+        <span class="quantity-adjust js-quantity-plus">+</span>
+      </div><!-- .quantity-decoy -->
+      <p class="quantity-price js-quantity-price">$1.95</p><!-- .quantity-price -->
+      <%= label_tag "quantity", "How many would you like?", class: "sr-only" %>
+      <%= text_field_tag "quantity", 1, placeholder: "quantity",
+          class: "form-control js-quantity-input hidden" %>
+    </div><!-- .form-group -->
+
+    <div class="form-group">
+      <h3>Payment Info</h3>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <%= label_tag "payment", "Credit Card Number", class: "sr-only" %>
+          <%= text_field_tag "payment", nil, placeholder: "XXXX-XXXX-XXXX-XXXX", class: "form-control",
+              data: {:validetta => "required,creditCard"} %>
+        </div><!-- .col-sm-12 -->
+      </div><!-- .row -->
+
+      <div class="row">
+        <div class="col-sm-6">
+          <%= label_tag "expiration", "When does your card expire?", class: "sr-only" %>
+          <%= text_field_tag "expiration", nil, placeholder: "MM/YY", class: "form-control",
+              data: {:validetta => "required"} %>
+        </div><!-- .col-sm-6 -->
+
+        <div class="col-sm-6">
+          <%= label_tag "cvc", "What is the little number on the back of the card?", class: "sr-only" %>
+          <%= text_field_tag "cvc", nil, placeholder: "CVC", class: "form-control",
+              data: {:validetta => "required"} %>
+        </div><!-- .col-sm-6 -->
+      </div><!-- .row -->
+    </div><!-- .form-group -->
+
+    <div class="form-group">
+      <h3>Billing Info</h3>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <%= label_tag "full_name", "What is your name?", class: "sr-only" %>
+          <%= text_field_tag "full_name", nil, placeholder: "Full Name", class: "form-control",
+              data: {:validetta => "required"} %>
+
+          <%= label_tag "billing-address-line1", "And what is your billing address?", class: "sr-only" %>
+          <%= text_field_tag "billing-address-line1", nil, placeholder: "Street Address", class: "form-control",
+              data: {:validetta => "required"} %>
+        </div><!-- .col-sm-12 -->
+      </div><!-- .row -->
+
+      <div class="row">
+        <div class="col-xs-6">
+          <%= label_tag "billing-address-line2", "Apartment/Condo/Unit #?", class: "sr-only" %>
+          <%= text_field_tag "billing-address-line2", nil, placeholder: "Apt/Unit/Suite",
+              class: "form-control" %>
+        </div><!-- .col-xs-6 -->
+        <div class="col-xs-6">
+          <%= label_tag "billing-city", "What city do you live in?", class: "sr-only" %>
+          <%= text_field_tag "billing-city", nil, placeholder: "City", class: "form-control",
+              data: {:validetta => "required"} %>
+        </div><!-- .col-xs-6 -->
+      </div><!-- .row -->
+
+      <div class="row">
+        <div class="col-xs-6">
+          <%= label_tag "billing-state", "What state do you live in?", class: "sr-only" %>
+          <%= text_field_tag "billing-state", nil, placeholder: "State", class: "form-control",
+              data: {:validetta => "required"} %>
+        </div><!-- .col-xs-6 -->
+
+        <div class="col-xs-6">
+          <%= label_tag "billing-zip", "What is your zipcode?", class: "sr-only" %>
+          <%= text_field_tag "billing-zip", nil, placeholder: "Zip", class: "form-control",
+              data: {:validetta => "required"} %>
+        </div><!-- .col-xs-6 -->
+      </div><!-- .row -->
+    </div><!-- .form-group -->
+
+    <div class="form-group">
+      <h3>Where would you like us to ship your cwater?</h3>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <%= label_tag "shipping_preference_billing_address", "Billing Address" %>
+          <%= radio_button_tag "shipping_preference", "billing_address", true, class: "js-shipping-select" %>
+          <%= label_tag "shipping_preference_shipping_address", "Different Address" %>
+          <%= radio_button_tag "shipping_preference", "shipping_address", false, class: "js-shipping-select" %>
+        </div><!-- .col-sm-12 -->
+      </div><!-- .row -->
+
+      <div class="shipping-address js-shipping-address">
+        <div class="row">
+          <div class="col-sm-12">
+            <%= label_tag "full_name", "What is your name?", class: "sr-only" %>
+            <%= text_field_tag "full_name", nil, placeholder: "Full Name", class: "form-control" %>
+          </div><!-- .col-sm-12 -->
+        </div><!-- .row -->
+
+        <div class="row">
+          <div class="col-sm-12">
+            <%= label_tag "shipping-address-line1", "And what is your shipping address?", class: "sr-only" %>
+            <%= text_field_tag "shipping-address-line1", nil, placeholder: "Street Address", class: "form-control" %>
+          </div><!-- .col-sm-12 -->
+        </div><!-- .row -->
+
+        <div class="row">
+          <div class="col-xs-6">
+            <%= label_tag "shipping-address-line2", "Apartment/Condo/Unit #?", class: "sr-only" %>
+            <%= text_field_tag "shipping-address-line2", nil, placeholder: "Apt/Unit/Suite", class: "form-control" %>
+          </div><!-- .col-xs-6 -->
+
+          <div class="col-xs-6">
+            <%= label_tag "shipping-city", "What city do you live in?", class: "sr-only" %>
+            <%= text_field_tag "shipping-city", nil, placeholder: "City", class: "form-control" %>
+          </div><!-- .col-xs-6 -->
+        </div><!-- .row -->
+
+        <div class="row">
+          <div class="col-xs-6">
+            <%= label_tag "shipping-state", "What state do you live in?", class: "sr-only" %>
+            <%= text_field_tag "shipping-state", nil, placeholder: "State", class: "form-control" %>
+          </div><!-- .col-xs-6 -->
+
+          <div class="col-xs-6">
+            <%= label_tag "shipping-zip", "What is your zipcode?", class: "sr-only" %>
+            <%= text_field_tag "shipping-zip", nil, placeholder: "Zip", class: "form-control" %>
+          </div><!-- .col-xs-6 -->
+        </div><!-- .row -->
+      </div>
+    </div><!-- .form-group -->
+  </div><!-- .modal-body -->
+  <div class="modal-footer">
+    <%= button_tag "cancel order", class: "btn btn-lg btn-danger", data: {:dismiss => "modal"} %>
+    <%= button_tag "buy cwater", class: "btn btn-lg btn-success js-ajax-submit" %>
+  </div><!-- .modal-footer -->
+
+<% end %>
