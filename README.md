@@ -5,7 +5,7 @@ This little rails app is a mock-marketing/commerce site for a fictional beverage
 
 ## Local Setup Instructions
 1. clone this repo
-2. run `bower install` and `npm install` from the root of this repo to install all dependencies
+2. run `bundle install`, `bower install` and `npm install` from the root of this repo to install all dependencies
 3. run `bin/rails server` to start the rails dev server
 4. the site should now be reachable at [localhost:3000](http://localhost:3000)
 5. (optional) If you'd like to leverage the power of browsersync, open a new terminal tab/window, `cd` into the root of this app and run `gulp`
