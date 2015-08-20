@@ -1,4 +1,4 @@
-# *c*water
+# **c**water
 Code Challenge for Varsity Tutors
 
 This little rails app is a mock-marketing/commerce site for a fictional beverage called *c*water.
@@ -9,6 +9,8 @@ This little rails app is a mock-marketing/commerce site for a fictional beverage
 3. run `bin/rails server` to start the rails dev server
 4. the site should now be reachable at [localhost:3000](http://localhost:3000)
 5. (optional) If you'd like to leverage the power of browsersync, open a new terminal tab/window, `cd` into the root of this app and run `gulp`
+
+If you'd like to see a work in progress, check out the `feature/build-sales-form` branch.
 
 ## Notes
 I've disabled the rails asset pipeline and am managing the asset compilation/concatenation via gulp. This may seem counterintuitive, but I chose to do this for a few reasons:
