@@ -6017,6 +6017,13 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-size: 24px; }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    body {
+      background-image: url("hero-sm.jpg"); } }
+  @media screen and (max-width: 767px) {
+    body {
+      background-image: url("hero-xs.jpg");
+      font-size: 16px; } }
 
 /* latin-ext */
 @font-face {
@@ -6161,6 +6168,9 @@ h1, h2, h3, h4, h5, h6 {
         border-color: #ffb220;
         color: #ffb220;
         text-decoration: none; }
+  @media screen and (max-width: 767px) {
+    .hero {
+      font-size: 24px; } }
 
 .sales-feed {
   background: url("hero-lg-blurred.jpg") no-repeat center;
@@ -6174,7 +6184,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: .75em;
     margin-bottom: 2em;
     max-height: 60vh;
-    overflow: auto; }
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; }
     .sales-feed .feed .panel {
       background-color: transparent; }
     .sales-feed .feed .list-group-item {

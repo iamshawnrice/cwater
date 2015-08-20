@@ -12,6 +12,8 @@
     margin-bottom: 2em;
     max-height: 60vh;
     overflow: auto;
+    // enables springy, natural-feeling scrolling to touch-enabled devices
+    -webkit-overflow-scrolling: touch;
 
     .panel {
       background-color: transparent;

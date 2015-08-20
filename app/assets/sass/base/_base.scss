@@ -3,4 +3,13 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-size: 24px;
+
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    background-image: url('hero-sm.jpg');
+  }
+
+  @media screen and (max-width: 767px) {
+    background-image: url('hero-xs.jpg');
+    font-size: 16px;
+  }
 }
