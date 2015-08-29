@@ -1,7 +1,6 @@
 # **c**water
-Code Challenge for Varsity Tutors
 
-This little rails app is a mock-marketing/commerce site for a fictional beverage called *c*water.
+This is a simple marketing site for a fictional beverage. It was built as a code exercise to practice a little rails. Feel free to clone and modify as you see fit.
 
 ## Local Setup Instructions
 1. clone this repo
